@@ -1,0 +1,21 @@
+<% if $result!="" %>
+  <div class=message>
+  <%= $result %>
+  </div>
+<BR>
+  <%= image_tag $img %>
+ <BR>
+  <%= image_tag $img_u %>
+<% end %>
+
+<%= form_for @jankens, :url => {:action => 'index'}, :html => {:method => 'get'} do |f|%>
+  <div class=winloss>
+    <%= $win %>勝<%= $loss %>負<%= $draw %>分
+  </div>
+
+  <div class=controll>
+    
+    <%= f.select :kid, [["グー","1"],["チョキ","2"],["パー","3"]]%>
+    <%= f.submit :勝負 %>
+  </div>
+<% end %>
